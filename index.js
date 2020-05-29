@@ -1,7 +1,7 @@
 'use strict';
 
 var os = require('os');
-var nodeStatic = require('node-static');
+//var nodeStatic = require('node-static');
 var https = require('http'); // use require('https') for https
 var socketIO = require('socket.io');
 var fs = require("fs");
@@ -11,10 +11,12 @@ var options = {
   //cert: fs.readFileSync('cert.pem')
 };
 
-var fileServer = new(nodeStatic.Server)();
+//var fileServer = new(nodeStatic.Server)();
 var port = 1794;
 var app = https.createServer(options,function(req, res) {
-  fileServer.serve(req, res);
+ // fileServer.serve(req, res);
+   res.writeHead(200,{'Content-Type':'test/plain'});
+  res.end('Hello world!\n');
 
 }).listen(port);
 console.log('Listening on port',port);
