@@ -12,10 +12,15 @@ var options = {
 };
 
 var fileServer = new(nodeStatic.Server)();
+var port = 1794;
 var app = https.createServer(options,function(req, res) {
   fileServer.serve(req, res);
 
-}).listen(1794, "0.0.0.0");
+}).listen(port);
+console.log('Listening on port',port);
+
+
+
 
 var io = socketIO.listen(app);
 io.sockets.on('connection', function(socket) {
