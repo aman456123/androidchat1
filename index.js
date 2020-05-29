@@ -15,9 +15,9 @@ var options = {
 var port = 1794;
 var app = https.createServer(function(req, res) {
  // fileServer.serve(req, res);
- res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write('Hello World!');
-  res.end();
+ //res.writeHead(200, {'Content-Type': 'text/html'});
+ // res.write('Hello World!');
+ // res.end();
 
 }).listen(port);
 console.log('Listening on port',port);
